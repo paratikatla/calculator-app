@@ -1,11 +1,14 @@
 
 
-const CalcScreen = (displayText) => {
+const CalcScreen = ({displayText}) => {
 
     return(
-        <label className = 'calcualtor-screen'>
-            {displayText}
-        </label>
+        <div>
+            <label className="calculator-screen">
+                {displayText}
+            </label>
+        </div>
+        
     )
 
 }
