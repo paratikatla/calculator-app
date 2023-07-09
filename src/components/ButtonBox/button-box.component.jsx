@@ -1,4 +1,4 @@
-
+import '../ButtonBox/button-box.css'
 
 const ButtonBox = ({buttons}) => {
    

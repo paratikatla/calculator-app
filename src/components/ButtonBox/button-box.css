@@ -1,0 +1,19 @@
+.button-box
+{
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+    background: linear-gradient(to bottom, #91eff6, #c8eddc, #ffeac2);
+    border-radius: 20px;
+
+    justify-content: center;
+    justify-items:center;
+    align-items: center;
+    
+}
+

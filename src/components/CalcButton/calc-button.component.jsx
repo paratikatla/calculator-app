@@ -1,4 +1,4 @@
-
+import '../CalcButton/calc-button.css'
 
 const CalcButton = ({className, val, onClick}) => {
     return (

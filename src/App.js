@@ -53,30 +53,34 @@ const App = () => {
 
 
   return(
-    <div>
+    <div className = "App">
+    
+      <h1 className = 'calculator-title'>
+        Pranav's Calculator
+      </h1>
 
-      <div>
-        <CalcScreen displayText = {calculatorField}/>
-      </div>
+      <CalcScreen displayText = {calculatorField}/>
 
-      <div>
-        <ButtonBox buttons = {calculatorButtons.flat().map((button) => {
-            return(
-              <CalcButton className = {`${button} button`}
-                          val = {button} 
-                          onClick = {
-                            button === "c"
-                            ? clearButtonHandler
-                            : button === "="
-                            ? equalButtonHandler
-                            : button === "%"
-                            ? percentButtonHandler
-                            : () => ButtonHandler(button)
-                          }/>
-            )
-          })}
-        />
-      </div>  
+      <ButtonBox buttons = {calculatorButtons.flat().map((button) => {
+          return(
+            <CalcButton className = {
+                          !isNaN(button)
+                          ? "num-button"
+                          : "operation-button" 
+                        }
+                        val = {button} 
+                        onClick = {
+                          button === "c"
+                          ? clearButtonHandler
+                          : button === "="
+                          ? equalButtonHandler
+                          : button === "%"
+                          ? percentButtonHandler
+                          : () => ButtonHandler(button)
+                        }/>
+          )
+        })}
+      />
 
     </div>
   );

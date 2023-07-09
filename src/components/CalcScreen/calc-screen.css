@@ -1,0 +1,28 @@
+.screen-container
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.calculator-screen
+{
+    text-align: right;
+    font-family: 'Indie Flower';
+    font-size: 40px;
+    background: rgba(255, 255, 255, 0);
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 500px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.697);;
+
+    background: linear-gradient(to right, #91eff6, #c8eddc, #ffeac2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
