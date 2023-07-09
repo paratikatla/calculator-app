@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 import './App.css';
 
@@ -9,7 +9,6 @@ import CalcScreen from './components/CalcScreen/calc-screen.component';
 const App = () => {
 
   const [calculatorField, setCalculatorField] = useState('');
-  const [errorBox, setErrorBox] = useState('');
   
 
   const calculatorButtons = [
@@ -22,10 +21,18 @@ const App = () => {
 
   const equalButtonHandler = () => 
   {
+    try
+    {
+    // eslint-disable-next-line no-eval
     const result = eval(calculatorField);
     setCalculatorField(result);
+    }
+    catch(err)
+    {
+      setCalculatorField('Invalid Expression');
+    }
 
-    console.log("equal pressed");
+    
   }
 
   const clearButtonHandler = () =>
@@ -37,14 +44,24 @@ const App = () => {
 
   const percentButtonHandler = () =>
   {
-    setCalculatorField(calculatorField + '/100' )
+    if(calculatorField === 'Invalid Expression')
+    {
+      setCalculatorField('');
+    }
+
+    setCalculatorField(calculatorField => calculatorField + '/100' )
 
     console.log("percent pressed");
   }
 
   const ButtonHandler = (val) => 
   {
-    setCalculatorField(calculatorField + val);
+    if(calculatorField === 'Invalid Expression')
+    {
+      setCalculatorField('');
+    }
+
+    setCalculatorField(calculatorField => calculatorField + val);
 
     console.log("regular pressed");
   }
